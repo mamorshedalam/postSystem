@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .x-formSection {
+    @apply fixed inset-0 w-full h-full bg-black/30 backdrop-blur-sm;
+  }
+  .x-formSection > div{
+     @apply absolute inset-0 w-full h-full z-0;
+  }
+  .x-form{
+     @apply relative max-w-lg bg-white md:p-5 p-3 rounded mx-auto mt-[10%] z-10;
+  }
+  .x-form > button{
+     @apply py-1 px-3 bg-lime-500 text-white rounded block w-fit ml-auto
+  }
+  .x-postSection {
+    @apply w-full grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 md:gap-4 gap-3;
+  }
+  .x-post {
+    @apply flex md:flex-row flex-col gap-2 bg-white md:py-4 py-2 md:px-6 px-4 rounded x-DropShadow;
+  }
+  .x-post > div:first-child {
+    @apply md:w-2/5 w-3/5 md:mx-0 mx-auto md:mb-0 mb-4;
+  }
+  .x-post > div:last-child {
+    @apply md:w-3/5 w-full;
+  }
+  .x-post button {
+    @apply text-xs py-1 px-3 bg-rose-500 text-white rounded block w-fit ml-auto;
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-gray-100 text-sm;
+  }
+  header {
+    @apply bg-white x-DropShadow md:py-4 py-2 md:px-9 px-4 flex items-center justify-between font-semibold uppercase text-base;
+  }
+  main {
+    @apply min-h-[calc(100svh-88px)] md:p-5 p-3;
+  }
+  h2 {
+    @apply font-medium md:mb-4 mb-2 x-lineText2;
+  }
+  p {
+    @apply text-black/75 x-lineText5 md:mb-3 mb-1.5;
+  }
+  a,
+  button {
+    @apply inline-block cursor-pointer;
+  }
+
+  img {
+    @apply h-full w-fit object-cover align-middle;
+  }
+
+  input,
+  select,
+  textarea {
+    @apply w-full py-1 px-3 mb-4 outline-none bg-slate-100/70 focus-visible:outline-none;
+  }
+  label{
+     @apply font-medium
+  }
+
+  a,
+  button,
+  span,
+  p,
+  i,
+  input,
+  select,
+  textarea,
+  li,
+  ul,
+  img,
+  svg,
+  label,
+  svg path,
+  tr,
+  td,
+  *::after,
+  *::before,
+  .transition-3,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply transition-all duration-300 ease-out;
+  }
+}
+
+@layer utilities {
+  html {
+    scroll-behavior: smooth;
+  }
+  .x-DropShadow {
+    box-shadow: 0px 1px 0px 0px rgba(226, 232, 240, 1);
+  }
+  .x-lineText2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .x-lineText5 {
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
