@@ -4,6 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "start": "tailwindcss -i ./src/css/tailwind.css -o ./src/css/style.css --watch",
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview"
